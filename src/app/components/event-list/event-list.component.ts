@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   <div>
       <h1> Upcoming Event </h1>
       <hr/>
-      <app-event-thumbnail *ngFor="let event of eventInput" [event]="event"></app-event-thumbnail>
+      <div class="row">
+          <div *ngFor="let event of eventInput" class="col-md-5">
+              <app-event-thumbnail  [event]="event"></app-event-thumbnail>
+           </div>
+      </div>
   </div>
   `,
 })

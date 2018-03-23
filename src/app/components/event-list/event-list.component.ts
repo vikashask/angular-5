@@ -4,15 +4,13 @@ import { EventService } from '../shared/event.service';
 @Component({
   selector: 'app-event-list',
   template: `
-  <div>
       <h1> Upcoming Event </h1>
       <hr/>
-      <div class="row">
+      <div>
           <div *ngFor="let event of event" class="col-md-5">
               <app-event-thumbnail  [event]="event"></app-event-thumbnail>
            </div>
       </div>
-  </div>
   `,
 })
 export class EventListComponent implements OnInit {
@@ -21,7 +19,7 @@ export class EventListComponent implements OnInit {
   constructor(private eventService: EventService) { }
 
   ngOnInit() {
-    this.event = this.eventService.getEvents(); 
+    this.event = this.eventService.getEvents();
 
   }
 
